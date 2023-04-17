@@ -40,8 +40,8 @@ export class WorldService {
     }
   }
   public dibuja(ctx: any) {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, 999, 999);
+    //ctx.fillStyle = 'white';
+    //ctx.fillRect(0, 0, 999, 999);
     ctx.fillStyle = 'black';
     for (let x = 0; x < 500; x++) {
       for (let y = 0; y < 500; y++) {
