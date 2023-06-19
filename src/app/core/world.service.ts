@@ -101,7 +101,7 @@ export class WorldService {
   public llenaEnte() {
     let cantidad;
     //cantidad = 2;
-    cantidad = Math.floor(Math.random() * 501) + 500;
+    cantidad = Math.floor(Math.random() * 1201) + 1200;
     for (let k = 0; k < cantidad; k++) {
       // generar un número aleatorio entre 1 y 100 para el valor a agregar
       let valor = Math.floor(Math.random() * 100) + 1;
@@ -122,15 +122,31 @@ export class WorldService {
   public dibuja(ctx: any) {
     //ctx.fillStyle = 'white';
     //ctx.fillRect(0, 0, 999, 999);
+    //ctx.fillStyle = 'white';
+    //ctx.fillRect(1, 1, 50000, 50000);
+
+    let ancho = 15;
     for (let x = 0; x < 500; x++) {
       for (let y = 0; y < 500; y++) {
         let valor = this.world[x][y];
         if (valor != 0) {
+          ctx.fillStyle = 'yellow';
+          ctx.fillRect((x * ancho), (y * ancho), ancho, ancho);
           ctx.fillStyle = 'black';
+          ctx.fillRect((x * ancho) + 2, (y * ancho) + 2, ancho - 4, ancho - 4);
+          ctx.fillRect((x * ancho) + 7, (y * ancho), 1, ancho);
+          ctx.fillRect((x * ancho), (y * ancho) + 7, ancho, 1);
+          ctx.fillRect((x * ancho), (y * ancho), 2, 2);
+          ctx.fillRect((x * ancho) + ancho - 2, (y * ancho), 2, 2);
+          ctx.fillRect((x * ancho), (y * ancho) + ancho - 2, 2, 2);
+          ctx.fillRect((x * ancho) + ancho - 2, (y * ancho)+ ancho - 2, 2, 2);
+
         } else {
           ctx.fillStyle = 'white';
+          ctx.fillRect((x * ancho), (y * ancho), ancho, ancho);
+
         }
-        ctx.fillRect(x * 2, y * 2, 2, 2);
+
 
       }
     }
