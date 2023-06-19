@@ -25,8 +25,7 @@ export class CanvasComponent {
 
   }
   public procesa(ctx: any) {
-    this.world.llena();
-    this.world.llenaEnte();
+    this.world.vive();
     this.world.dibuja(ctx);
   }
   public detener() {
